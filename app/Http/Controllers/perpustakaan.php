@@ -9,6 +9,9 @@ class perpustakaan extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function welcome(){
+        return view('welcome');
+    }
     public function anggota(){
        return view('form anggota');
     }

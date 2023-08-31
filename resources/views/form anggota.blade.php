@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Data anggota</h1>
-<form action="">
+<form action="{{ route('get_buku') }}">
         <label for="id_anggota">ID Anggota</label>
         <br>
         <input type="text" name="id_anggota" id="id_anggota">

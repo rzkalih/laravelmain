@@ -6,7 +6,7 @@
     <title>Petugas</title>
 </head>
 <body>
-<form action="">
+<form action="{{ route('get_buku') }}">
     <h1>data petugas</h1>
         <label for="id_petugas">ID Petugas</label>
         <br>
@@ -28,7 +28,7 @@
         <br>
         <textarea name="alamat" id="alamat"></textarea>
         <br><br>
-        <input type="submit" value="Simpan">
+        <input type="submit" value="Next">
     </form>
 </body>
 </html>

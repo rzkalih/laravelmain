@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Imput buku</h1>
-<form action="">
+<form action="{{ route('get_welcome') }}">
         <label for="id_buku">ID Buku</label>
         <br>
         <input type="text" name="id_buku" id="id_buku">

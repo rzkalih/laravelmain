@@ -12,10 +12,11 @@ use App\Http\Controllers\perpustakaan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [perpustakaan::class, 'welcome'])->name('get_welcome');
 
-Route::get('/', [perpustakaan::class, 'anggota']);
+Route::get('/anggota', [perpustakaan::class, 'anggota'])->name('get_anggota');
 
-Route::get('/buku', [perpustakaan::class, 'buku']);
+Route::get('/buku', [perpustakaan::class, 'buku'])->name('get_buku');
 
-Route::get('/petugas', [perpustakaan::class, 'petugas']);
+Route::get('/petugas', [perpustakaan::class, 'petugas'])->name('get_petugas');
 
