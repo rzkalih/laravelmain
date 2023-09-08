@@ -11,15 +11,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  /* Di dalam file CSS Anda (misalnya, styles.css) */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 50%;
-    background-color: #333; /* Ganti dengan warna latar belakang yang Anda inginkan */
-    color: #fff; /* Ganti dengan warna teks yang Anda inginkan */
-    padding: 10px;
-    text-align: center;
-}
 
 :root {
   --blue: #007bff;

@@ -36,7 +36,7 @@
           <a href="{{ route('get_anggota') }}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Data Anggota
+              Form Anggota
             </p>
           </a>
         </li>
@@ -44,7 +44,7 @@
           <a href="{{ route('get_buku') }}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Data Buku
+              Form Buku
             </p>
           </a>
         </li>
@@ -52,11 +52,11 @@
           <a href="{{ route('get_petugas') }}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Data Petugas
+              Form Petugas
             </p>
           </a>
         </li>
-      </ul>
+
     </nav>
     <!-- /.sidebar-menu -->
   </div>
