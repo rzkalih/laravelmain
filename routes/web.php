@@ -12,7 +12,9 @@ use App\Http\Controllers\perpustakaan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [perpustakaan::class, 'welcome'])->name('get_welcome');
+Route::get('/', function () {
+    return view('welcome');
+})->name('dashboard');
 
 Route::get('/anggota', [perpustakaan::class, 'anggota'])->name('get_anggota');
 
