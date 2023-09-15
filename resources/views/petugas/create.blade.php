@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'buku')
+@section('title', 'petugas')
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Buku</h1>
+                    <h1 class="m-0">petugas</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Buku</li>
+                        <li class="breadcrumb-item active">petugas/li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,45 +27,41 @@
                 <div class="col-lg-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Form Buku</h3>
+                            <h3 class="card-title">Form Petugas</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form action="{{ route('petugas.store')}}" method="post">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="id_buku">ID Buku</label>
-                                    <input class="form-control" type="text" name="id_buku" id="id_buku" placeholder="Masukan ID">
+                                    <label for="id">ID Petugas</label>
+                                    <input class="form-control" type="text" name="id" id="id" placeholder="Masukan ID">
                                 </div>
                                 <div class="form-group">
-                                    <label for="kode_buku">Kode Buku</label>
-                                    <input class="form-control" type="text" name="kode_buku" id="kode_buku" placeholder="Masukan kode">
+                                    <label for="nama_petugas">Nama Petugas</label>
+                                    <input class="form-control" type="text" name="nama_petugas" id="nama_petugas" placeholder="Masukan Nama">
                                 </div>
                                 <div class="form-group">
-                                    <label for="judul">Judul</label>
-                                    <input class="form-control" type="text" name="judul" id="judul" placeholder="Masukan judul">
+                                    <label for="jabatan_petugas">Jabatan</label>
+                                    <input class="form-control" type="text" name="jabatan_petugas" id="judul" placeholder="">
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="penulis" name="penulis" id="penulis">Penulis</label>
-                                    <input class="form-control" type="text" name="penulis" id="penulis" placeholder="Masukan nama penulis">
-                                </div>
-                                <div class="form-group">
-                                    <label for="penerbit" name="penerbit" id="penerbit">Penerbit</label>
-                                    <input class="form-control" type="text" name="penerbit" id="penerbit" placeholder="Masukan nama penerbit">
-                                </div>
-                                <div class="form-group">
-                                    <label for="tahun_terbit" name="tahun_terbit" id="tahun_terbit">Tahun Terbit</label>
+                                    <label>No Telepon</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
-                                        <input class="form-control" type="number" name="tahun_terbit" id="tahun_terbit">
+                                        <input type="number" class="form-control" name="tlp_petugas" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="stok" name="stok" id="stok">Stok Buku</label>
-                                    <input class="form-control" type="number" name="stok" id="stok" placeholder="Masukan angka">
+                                    <label for="alamat_petugas" name="alamat_petugas" id="alamat_petugas">alamat petugas</label>
+                                    <input class="form-control" type="text" name="alamat_petugas" id="alamat_petugas" placeholder="alamat">
                                 </div>
+
                             </div>
 
 

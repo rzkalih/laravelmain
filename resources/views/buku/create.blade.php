@@ -31,15 +31,16 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form action="{{ route('buku.store')}}" method="post">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="id_buku">ID Buku</label>
-                                    <input class="form-control" type="text" name="id_buku" id="id_buku" placeholder="Masukan ID">
+                                    <input class="form-control" type="text" name="id" id="id_buku" placeholder="Masukan ID">
                                 </div>
                                 <div class="form-group">
                                     <label for="kode_buku">Kode Buku</label>
-                                    <input class="form-control" type="text" name="kode_buku" id="kode_buku" placeholder="Masukan kode">
+                                    <input class="form-control" type="text" name="kode" id="kode_buku" placeholder="Masukan kode">
                                 </div>
                                 <div class="form-group">
                                     <label for="judul">Judul</label>

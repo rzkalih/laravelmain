@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\BukuContoller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perpustakaan;
+use App\Http\Controllers\PetugasController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +29,8 @@ Route::get('/petugas', [perpustakaan::class, 'petugas'])->name('get_petugas');
 Route::get('/tabel', function () {
     return view('tabel');
 });
+Route::resource('/anggota', AnggotaController::class);
+
+Route::resource('/buku', BukuContoller::class);
+
+Route::resource('/petugas', PetugasController::class);
