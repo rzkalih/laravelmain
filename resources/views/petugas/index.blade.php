@@ -64,9 +64,15 @@
                                     <td>{{ $value->alamat_petugas }}</td>
 
                                     <td>
-                                        <a href="" class="btn-sm btn-info">Show</a>
-                                        <a href="" class="btn-sm btn-warning">Edit</a>
-                                        <a href="" class="btn-sm btn-danger">Delete</a>
+                                        <form action="{{ route('petugas.destroy',$value->id)}}" method="post">
+                                            @csrf
+                                            @method("DELETE")
+                                            <a href="{{ route('petugas.show',$value->id)}}" class="btn-sm btn-info">show</a>
+                                            <a href="{{ route('petugas.edit',$value->id)}}" class="btn-sm btn-warning">edit</a>
+                                            <button type="submit" class="btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus ini?')">hapus
+
+
+                                        </form>
                                     </td>
                                 </tr>
 
