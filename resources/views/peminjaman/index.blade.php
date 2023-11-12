@@ -1,6 +1,7 @@
 @extends('master')
 
-@section('title', 'Data anggota')
+@section('title', 'Data Petugas')
+
 
 
 @section('content')
@@ -19,12 +20,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Anggota</h1>
+                    <h1 class="m-0">Data Peminjam</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Data Anggota</li>
+                        <li class="breadcrumb-item active">Data Buku</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,44 +38,37 @@
                 <div class="col-lg-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Table Data anggota</h3>
+                            <h3 class="card-title">Table Data Peminjam</h3>
                         </div>
                         <!-- /.card-header -->
                         <table class="table table-head-fixed text-nowrap">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>id</th>
-                                    <th>kode</th>
-                                    <th>nama</th>
-                                    <th>jenis kelamin</th>
-                                    <th>jurusan</th>
-                                    <th>telepon</th>
-                                    <th>alamat</th>
+                                    <th>id pinjam</th>
+                                    <th>tanggal pinjam</th>
+                                    <th>tanggak kembali</th>
+                                    <th>nama buku</th>
+                                    <th>nama anggota</th>
+                                    <th>nama petugas</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($anggota as $key => $value)
+                                @forelse ($peminjaman as $key => $value)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $value->id }}</td>
-                                    <td>{{ $value->kode }}</td>
-                                    <td>{{ $value->nama }}</td>
-                                    <td>{{ $value->jk }}</td>
-                                    <td>{{ $value->jurusan }}</td>
-                                    <td>{{ $value->tlp }}</td>
-                                    <td>{{ $value->alamat }}</td>
+                                    <td>{{ $value->tanggal_pinjam }}</td>
+                                    <td>{{ $value->tanggal_kembali }}</td>
+                                    <td>{{ $value->buku->judul}}</td>
+                                    <td>{{ $value->anggota->nama }}</td>
+                                    <td>{{ $value->petugas->nama_petugas }}</td>
+
                                     <td>
-                                        <form action="{{ route('anggota.destroy',$value->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a href="{{ route('anggota.show',$value->id)}}" class="btn-sm btn-info">Show</a>
-                                            <a href="{{ route('anggota.edit',$value->id)}}" class="btn-sm btn-warning">Edit</a>
-                                            <button type="submit"  class="btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus ini?')" ><a>delete</a>
-
-                                        </form>
-
+                                        <a href="" class="btn-sm btn-info">Show</a>
+                                        <a href="" class="btn-sm btn-warning">Edit</a>
+                                        <a href="" class="btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
 

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->integer('stok');
+            $table->unsignedBigInteger('rak_id');
+            $table->foreign('rak_id')->references('id')->on('rak');
             $table->timestamps();
         });
     }

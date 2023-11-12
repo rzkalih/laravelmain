@@ -31,21 +31,21 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('petugas.update', $petugas[0]->id)}}" method="post">
+                        <form action="{{ route('petugas.update', $petuga->id)}}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="id">ID Petugas</label>
-                                    <input class="form-control" type="text" name="id" id="id" placeholder="Masukan ID" value="{{ $petugas[0]->id }}">
+                                    <input class="form-control" type="text" name="id" id="id" placeholder="Masukan ID" value="{{ $petuga->id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="nama_petugas">Nama Petugas</label>
-                                    <input class="form-control" type="text" name="nama_petugas" id="nama_petugas" placeholder="Masukan Nama" value="{{ $petugas[0]->nama_petugas }}">
+                                    <input class="form-control" type="text" name="nama_petugas" id="nama_petugas" placeholder="Masukan Nama" value="{{ $petuga->nama_petugas }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="jabatan_petugas">Jabatan</label>
-                                    <input class="form-control" type="text" name="jabatan_petugas" id="judul" placeholder="" value="{{ $petugas[0]->jabatan_petugas }}">
+                                    <input class="form-control" type="text" name="jabatan_petugas" id="judul" placeholder="" value="{{ $petuga->jabatan_petugas }}">
                                 </div>
 
                                 <div class="form-group">
@@ -54,13 +54,13 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
-                                        <input type="number" class="form-control" name="tlp_petugas" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $petugas[0]->tlp_petugas }}">
+                                        <input type="number" class="form-control" name="tlp_petugas" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $petuga->tlp_petugas }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="alamat_petugas" name="alamat_petugas" id="alamat_petugas">alamat petugas</label>
-                                    <input class="form-control" type="text" name="alamat_petugas" id="alamat_petugas" placeholder="alamat" value="{{ $petugas[0]->alamat_petugas }}">
+                                    <input class="form-control" type="text" name="alamat_petugas" id="alamat_petugas" placeholder="alamat" value="{{ $petuga->alamat_petugas }}">
                                 </div>
 
                             </div>

@@ -3,8 +3,12 @@
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\BukuContoller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\perpustakaan;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RakController;
+use App\Http\Controllers\PeminjamanController;
+use App\Models\Anggota;
+use App\Models\Peminjaman;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +21,25 @@ use App\Http\Controllers\PetugasController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('dashboard');
-
-Route::get('/anggota', [perpustakaan::class, 'anggota'])->name('get_anggota');
-
-Route::get('/buku', [perpustakaan::class, 'buku'])->name('get_buku');
-
-Route::get('/petugas', [perpustakaan::class, 'petugas'])->name('get_petugas');
-Route::get('/tabel', function () {
-    return view('tabel');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/log', 'log')->name('auth.log');
+    Route::post('/store', 'store')->name('auth.store');
+    Route::post('/authentication', 'authentication')->name('auth.authentication');
+    Route::post('/logout', 'logout')->name('auth.logout');
+    Route::get('/welcome', 'welcome')->name('welcome');
 });
+
+
+
+Route::get('/', function () {
+    return view('auth.log');
+});
+
+
+Route::resource('/rak', RakController::class);
+
+Route::resource('/peminjaman', PeminjamanController::class);
+
 Route::resource('/anggota', AnggotaController::class);
 
 Route::resource('/buku', BukuContoller::class);

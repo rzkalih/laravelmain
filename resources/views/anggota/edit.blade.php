@@ -31,25 +31,25 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('anggota.update', $anggota[0]->id)}}" method="post">
+                        <form action="{{ route('anggota.update', $anggotum->id) }}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="id">ID Anggota</label>
-                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID" value="{{ $anggota[0]->id }}">
+                                    <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID" value="{{ $anggotum->id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="kode_anggota">Kode Anggota</label>
-                                    <input type="text" class="form-control" name="kode" id="kode_anggota" placeholder="Masukan kode" value="{{ $anggota[0]->kode }}">
+                                    <input type="text" class="form-control" name="kode" id="kode_anggota" placeholder="Masukan kode" value="{{ $anggotum->kode }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $anggota[0]->nama }}">
+                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $anggotum->nama }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="jk">Jenis Kelamin</label>
-                                    <select class="custom-select" name="jk" value="{{ $anggota[0]->jk }}">
+                                    <select class="custom-select" name="jk" value="{{ $anggotum->jk }}">
                                         <option selected disabled></option>
                                         <option>LAKI-LAKI</option>
                                         <option>PEREMPUAN</option>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Jurusan</label>
-                                    <select class="custom-select" name="jurusan" value="{{ $anggota[0]->jurusan }}">
+                                    <select class="custom-select" name="jurusan" value="{{ $anggotum->jurusan }}">
                                         <option selected disabled>Pilih Jurusan</option>
                                         <option>RPL</option>
                                         <option>DPIB</option>
@@ -74,12 +74,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
-                                        <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $anggota[0]->tlp }}">
+                                        <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $anggotum->tlp }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat">{{ $anggota[0]->alamat }}"</textarea>
+                                    <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat">{{ $anggotum->alamat }}"</textarea>
                                 </div>
                             </div>
                             <div class="card-footer">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggota;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        $anggota = DB::table('anggota')->get();
+        $anggota = Anggota::all();
         return view('anggota.index', compact('anggota'));
     }
 
@@ -38,42 +39,39 @@ class AnggotaController extends Controller
             'tlp' => 'required',
             'alamat' => 'required',
         ]);
+        $anggota = new anggota;
+        $anggota->id = $request->id;
+        $anggota->nama = $request->nama;
+        $anggota->kode = $request->kode;
+        $anggota->jk = $request->jk;
+        $anggota->jurusan = $request->jurusan;
+        $anggota->tlp = $request->tlp;
+        $anggota->alamat = $request->alamat;
+        $anggota->save();
 
-        $query = DB::table('anggota')->insert([
-            'id' => $request['id'],
-            'kode' => $request['kode'],
-            'nama' => $request['nama'],
-            'jk' => $request['jk'],
-            'jurusan' => $request['jurusan'],
-            'tlp' => $request['tlp'],
-            'alamat' => $request['alamat'],
-        ]);
-
-        return redirect('/anggota');
+        return redirect()->route('anggota.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Anggota $anggotum)
     {
-        $anggota = DB::table('anggota')->where('id', $id)->get();
-        return view('anggota.show', compact('anggota'));
+        return view('anggota.show', compact('anggotum'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Anggota $anggotum)
     {
-        $anggota = DB::table('anggota')->where('id', $id)->get();
-        return view('anggota.edit', compact('anggota'));
+        return view('anggota.edit', compact('anggotum'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Anggota $anggotum)
     {
         $request->validate([
             'id' => 'required',
@@ -84,24 +82,17 @@ class AnggotaController extends Controller
             'tlp' => 'required',
             'alamat' => 'required',
         ]);
-        $query = DB::table('anggota')->where('id', $id)->update([
-            'id' => $request['id'],
-            'kode' => $request['kode'],
-            'nama' => $request['nama'],
-            'jk' => $request['jk'],
-            'jurusan' => $request['jurusan'],
-            'tlp' => $request['tlp'],
-            'alamat' => $request['alamat'],
-        ]);
+
+        $anggotum->update($request->all());
         return redirect()->route('anggota.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Anggota $anggotum)
     {
-        $query = DB::table('anggota')->where('id', $id)->delete();
-        return redirect('anggota');
+        $anggotum = Anggota::where('id', $anggotum->id)->delete();
+        return redirect()->route('anggota.index');
     }
 }

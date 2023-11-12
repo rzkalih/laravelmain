@@ -47,6 +47,18 @@
                                     <input class="form-control" type="text" name="judul" id="judul" placeholder="Masukan judul">
                                 </div>
                                 <div class="form-group">
+                                    <label for="rak">rak</label>
+                                    <select name="rak_id" id="genre" class="form-control">
+                                        <option disabled selected>--Pilih Salah Satu--</option>
+                                        @forelse ($rak as $key => $value )
+                                        <option value="{{ $value->id }}">{{ $value->nama_rak }}</option>
+                                        @empty
+                                        <option disabled>--Data Masih Kosong--</option>
+                                        @endforelse
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="penulis" name="penulis" id="penulis">Penulis</label>
                                     <input class="form-control" type="text" name="penulis" id="penulis" placeholder="Masukan nama penulis">
                                 </div>
@@ -71,7 +83,7 @@
 
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class=" btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>

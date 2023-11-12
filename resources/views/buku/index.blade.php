@@ -3,6 +3,7 @@
 @section('title', 'Data Petugas')
 
 
+
 @section('content')
 
 @push('css')
@@ -47,6 +48,7 @@
                                     <th>id buku</th>
                                     <th>kode buku</th>
                                     <th>judul</th>
+                                    <th>rak</th>
                                     <th>penulis</th>
                                     <th>penerbit</th>
                                     <th>tahun terbit</th>
@@ -61,6 +63,7 @@
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->kode }}</td>
                                     <td>{{ $value->judul }}</td>
+                                    <td>{{ $value->rak[0]->nama_rak}}</td>
                                     <td>{{ $value->penulis }}</td>
                                     <td>{{ $value->penerbit }}</td>
                                     <td>{{ $value->tahun_terbit }}</td>

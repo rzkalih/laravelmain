@@ -35,23 +35,23 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="id">ID Anggota</label>
-                                <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID" value="{{ $anggota[0]->id }}" disabled>
+                                <input type="text" class="form-control" name="id" id="id" placeholder="Masukkan ID" value="{{ $anggotum->id }}" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="kode_anggota">Kode Anggota</label> 
-                                <input type="text" class="form-control" name="kode" id="kode_anggota" placeholder="Masukan kode" value="{{ $anggota[0]->kode }}" disabled>
+                                <label for="kode_anggota">Kode Anggota</label>
+                                <input type="text" class="form-control" name="kode" id="kode_anggota" placeholder="Masukan kode" value="{{ $anggotum->kode }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $anggota[0]->nama }}" disabled>
+                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama" value="{{ $anggotum->nama }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="jk">jenis kelamin</label>
-                                <input type="text" class="form-control" name="jk" id="jk" placeholder="" value="{{ $anggota[0]->jk }}" disabled>
+                                <input type="text" class="form-control" name="jk" id="jk" placeholder="" value="{{ $anggotum->jk }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="jurusan">jurusan</label>
-                                <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="" value="{{ $anggota[0]->jurusan }}" disabled>
+                                <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="" value="{{ $anggotum->jurusan }}" disabled>
                             </div>
 
                             <div class="form-group">
@@ -60,12 +60,12 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                     </div>
-                                    <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $anggota[0]->tlp }}" disabled>
+                                    <input type="number" class="form-control" name="tlp" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka" value="{{ $anggotum->tlp }}" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat" disabled>{{ $anggota[0]->alamat }}</textarea>
+                                <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan alamat" disabled>{{ $anggotum->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="card-footer">
